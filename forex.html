@@ -1,19 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Forex Trading</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Trading Pakistan – TheCurrencyPro</title>
+<meta name="description" content="Learn about Forex trading in Pakistan. Guides, tips, and insights for Pakistani forex traders.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.thecurrencypro.com/forex.html">
+<link rel="icon" href="logo-small.webp" type="image/webp">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5192487251401387" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo-small.webp" alt="TheCurrencyPro" width="38" height="38" loading="eager">
+      <span class="logo-text">TheCurrencyPro</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="currency-rates.html">Rates</a>
+      <a href="forex.html">Forex</a>
+      <a href="gold.html">Gold</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-theme" onclick="toggleMode()" title="Toggle Theme">🌙</button>
+    </div>
+  </div>
+</header>
 
-<h1>📈 Forex Trading</h1>
+<section class="hero">
+  <div class="hero-badge">📈 Forex</div>
+  <h1>Forex Trading in Pakistan</h1>
+  <p class="hero-sub">Guides and insights for forex traders in Pakistan — understand the market, risks, and strategies.</p>
+</section>
 
-<ul>
-<li>
-<li><a href="blog/forex-trading-pakistan.html">Forex Trading Pakistan</a></li>
-Forex Trading Pakistan
-</a>
-</li>
-</ul>
+<div class="section-wrap">
+  <div class="section-heading">
+    <div class="sh-icon sh-green">📈</div>
+    <h2 class="heading-green">Forex Articles</h2>
+  </div>
+  <div class="info-grid">
+
+    <a href="blog/forex-trading-pakistan.html" class="info-card" style="text-decoration:none; display:block;">
+      <div class="ic-header">
+        <div class="ic-icon sh-green">🇵🇰</div>
+        <div class="ic-title">Forex Trading in Pakistan</div>
+      </div>
+      <div class="ic-body"><p>Complete guide to forex trading in Pakistan — regulations, platforms, and tips for beginners.</p></div>
+    </a>
+
+  </div>
+
+  <!-- Info Box -->
+  <div class="content-grid" style="margin-top: 28px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+    <div class="content-box">
+      <h2>⚠️ Forex Disclaimer</h2>
+      <p>Forex trading involves significant risk. All content on TheCurrencyPro is for educational purposes only and does not constitute financial or investment advice.</p>
+    </div>
+    <div class="content-box green-accent">
+      <h2>🌍 What is Forex?</h2>
+      <p>Forex (Foreign Exchange) is the global market where currencies are bought and sold. It is the world's largest financial market with over $7 trillion in daily trading volume.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-links-row">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+      <div class="copyright">© 2026 TheCurrencyPro · All Rights Reserved · Built with ❤️ by Muhammad Faheem</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+  const btn = document.querySelector(".btn-theme");
+  if (btn) btn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+}
+</script>
+</body>
+</html>

@@ -2,189 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Contact Us – TheCurrencyPro | Support & Business Inquiries</title>
-
 <meta name="description" content="Contact TheCurrencyPro for support, feedback, or business inquiries related to currency exchange rates and financial information.">
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://www.thecurrencypro.com/contact.html">
+<link rel="icon" href="logo-small.webp" type="image/webp">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5192487251401387" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5192487251401387"
-crossorigin="anonymous"></script>
-
-<!-- Favicon -->
-<link rel="icon" href="/logo.png" type="image/png">
-
-<!-- Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "TheCurrencyPro",
   "url": "https://www.thecurrencypro.com",
-  "logo": "https://www.thecurrencypro.com/logo.png",
+  "logo": "https://www.thecurrencypro.com/logo-small.webp",
   "email": "contact@thecurrencypro.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Muhammad Faheem"
-  }
+  "founder": { "@type": "Person", "name": "Muhammad Faheem" }
 }
 </script>
 
 <style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-  line-height:1.7;
+.contact-form-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
 }
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px;
-  text-align:center;
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
-
-h1,h2{
-  color:#22d3ee;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  transition: .25s;
 }
-
-p{
-  color:#cbd5e1;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,229,255,.1);
+  outline: none;
 }
-
-.box{
-  background:#111827;
-  border:1px solid #1f2937;
-  border-left:4px solid #22d3ee;
-  padding:25px;
-  border-radius:12px;
-  margin:20px 0;
-  text-align:left;
-}
-
-input, textarea{
-  width:100%;
-  padding:12px;
-  margin-top:8px;
-  margin-bottom:15px;
-  border-radius:6px;
-  border:1px solid #374151;
-  background:#0b1220;
-  color:white;
-}
-
-button{
-  padding:12px 25px;
-  background:#22d3ee;
-  border:none;
-  border-radius:6px;
-  font-weight:600;
-  cursor:pointer;
-}
-
-button:hover{
-  background:#0ea5e9;
-}
-
-ul{
-  padding-left:20px;
-}
-
-ul li{
-  margin-bottom:8px;
-  color:#cbd5e1;
-}
-
-.footer{
-  margin-top:40px;
-  font-size:13px;
-  color:#94a3b8;
-  border-top:1px solid #1f2937;
-  padding-top:20px;
-}
+.form-group textarea { resize: vertical; min-height: 130px; }
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo-small.webp" alt="TheCurrencyPro" width="38" height="38" loading="eager">
+      <span class="logo-text">TheCurrencyPro</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="currency-rates.html">Rates</a>
+      <a href="forex.html">Forex</a>
+      <a href="gold.html">Gold</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-theme" onclick="toggleMode()" title="Toggle Theme">🌙</button>
+    </div>
+  </div>
+</header>
 
-<h1>Contact Us</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">📩 Contact Us</div>
+  <h1>Get in Touch</h1>
+  <p class="hero-sub">Contact TheCurrencyPro for support, feedback, or business inquiries.</p>
+</section>
 
-<p>
-Contact TheCurrencyPro for support, feedback, or business inquiries related to currency exchange rates and financial information.
-</p>
-
-<div class="box">
-<h2>📩 Get in Touch</h2>
-
-<form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
-
-<input type="hidden" name="form-name" value="contact">
-
-<label>Your Name</label>
-<input type="text" name="name" required>
-
-<label>Your Email</label>
-<input type="email" name="email" required>
-
-<label>Your Message</label>
-<textarea name="message" rows="5" required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
+<!-- CONTACT FORM -->
+<div class="contact-form-wrap">
+  <div class="content-box" style="margin-bottom:20px;">
+    <h2>📩 Send Us a Message</h2>
+    <form name="contact" method="POST" data-netlify="true" action="/thank-you.html" style="margin-top:16px;">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Muhammad Faheem" required>
+      </div>
+      <div class="form-group">
+        <label>Your Email</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea name="message" placeholder="Write your message here..." required></textarea>
+      </div>
+      <button class="btn-convert" type="submit" style="width:100%;">Send Message</button>
+    </form>
+  </div>
 </div>
 
-<div class="box">
-<h2>💡 Why Contact Us?</h2>
-<ul>
-<li>Currency exchange rate queries</li>
-<li>Report incorrect information</li>
-<li>Website feedback or suggestions</li>
-<li>Business or collaboration inquiries</li>
-</ul>
+<!-- INFO BOXES -->
+<div class="section-wrap" style="padding-top:0;">
+  <div class="content-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+
+    <div class="content-box green-accent">
+      <h2>💡 Why Contact Us?</h2>
+      <ul>
+        <li>Currency exchange rate queries</li>
+        <li>Report incorrect information</li>
+        <li>Website feedback or suggestions</li>
+        <li>Business or collaboration inquiries</li>
+      </ul>
+    </div>
+
+    <div class="content-box purple-accent">
+      <h2>⏱ Response Time</h2>
+      <p>We typically respond within <strong>24–48 hours</strong> depending on inquiry volume.</p>
+    </div>
+
+    <div class="content-box gold-accent">
+      <h2>📧 Contact Information</h2>
+      <p><strong>Email:</strong> contact@thecurrencypro.com</p>
+      <p><strong>Owner:</strong> Muhammad Faheem</p>
+      <p><strong>Country:</strong> Pakistan</p>
+    </div>
+
+    <div class="content-box">
+      <h2>🏢 About This Website</h2>
+      <p>TheCurrencyPro is an informational platform focused on currency exchange rates and financial awareness, independently managed by Muhammad Faheem.</p>
+    </div>
+
+  </div>
 </div>
 
-<div class="box">
-<h2>⏱ Response Time</h2>
-<p>We typically respond within 24–48 hours depending on inquiry volume.</p>
-</div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-links-row">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+      <div class="copyright">© 2026 TheCurrencyPro · All Rights Reserved · Built with ❤️ by Muhammad Faheem</div>
+    </div>
+  </div>
+</footer>
 
-<div class="box">
-<h2>🏢 About This Website</h2>
-<p>
-TheCurrencyPro is an informational platform focused on currency exchange rates and financial awareness.
-We aim to provide simple and educational content about USD to PKR and global currency trends.
-</p>
-<p>
-This website is independently managed by Muhammad Faheem and is based in Pakistan.
-</p>
-</div>
-
-<div class="box">
-<h2>📧 Contact Information</h2>
-<p><b>Email:</b> contact@thecurrencypro.com</p>
-</div>
-
-<div class="footer">
-<p>Owner: Muhammad Faheem</p>
-<p>Email: contact@thecurrencypro.com</p>
-<p>Country: Pakistan</p>
-<p>© 2026 TheCurrencyPro | All Rights Reserved</p>
-</div>
-
-</div>
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+  const btn = document.querySelector(".btn-theme");
+  if (btn) btn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+}
+</script>
 
 </body>
 </html>

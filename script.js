@@ -1,5 +1,5 @@
 /* ======================================================
-   FALLBACK RATES (used if API fails)
+   FALLBACK RATES
 ====================================================== */
 const fallbackRates = {
   USD: 1, PKR: 280, EUR: 0.92, GBP: 0.78,
@@ -89,11 +89,82 @@ let deferredPrompt;
 /* ======================================================
    DOM READY — INIT
 ====================================================== */
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   populateDropdowns();
   loadRates();
   initPWA();
+  initDarkMode();
+  initMobileNav();
 });
+
+/* ======================================================
+   DARK / LIGHT MODE — FIXED (saves preference)
+====================================================== */
+function initDarkMode() {
+  // Saved preference load karo
+  const saved = localStorage.getItem("theme");
+  if (saved === "light") {
+    document.body.classList.add("light");
+    updateThemeBtn(true);
+  }
+}
+
+function toggleMode() {
+  const isLight = document.body.classList.toggle("light");
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+  updateThemeBtn(isLight);
+}
+
+function updateThemeBtn(isLight) {
+  document.querySelectorAll(".btn-theme").forEach(btn => {
+    btn.textContent = isLight ? "🌞" : "🌙";
+  });
+}
+
+/* ======================================================
+   MOBILE NAV — FIXED
+====================================================== */
+function initMobileNav() {
+  // Hamburger button dynamically add karo agar nahi hai
+  const headerActions = document.querySelector(".header-actions");
+  const nav = document.querySelector(".nav");
+  if (!headerActions || !nav) return;
+
+  if (!document.querySelector(".btn-hamburger")) {
+    const btn = document.createElement("button");
+    btn.className = "btn-hamburger";
+    btn.title = "Menu";
+    btn.textContent = "☰";
+    btn.addEventListener("click", toggleNav);
+    headerActions.prepend(btn);
+  }
+
+  // Nav links click par menu band ho
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      const hbtn = document.querySelector(".btn-hamburger");
+      if (hbtn) hbtn.textContent = "☰";
+    });
+  });
+
+  // Outside click par band ho
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav") && !e.target.closest(".btn-hamburger")) {
+      nav.classList.remove("open");
+      const hbtn = document.querySelector(".btn-hamburger");
+      if (hbtn) hbtn.textContent = "☰";
+    }
+  });
+}
+
+function toggleNav() {
+  const nav = document.querySelector(".nav");
+  const btn = document.querySelector(".btn-hamburger");
+  if (!nav) return;
+  const isOpen = nav.classList.toggle("open");
+  if (btn) btn.textContent = isOpen ? "✕" : "☰";
+}
 
 /* ======================================================
    POPULATE DROPDOWNS
@@ -114,29 +185,25 @@ function populateDropdowns() {
 }
 
 /* ======================================================
-   LOAD LIVE RATES (sidebar cards + ticker)
+   LOAD LIVE RATES
 ====================================================== */
 async function loadRates() {
   const cardMap = {
-    "r-usd": "USD", "r-eur": "EUR", "r-gbp": "GBP",
-    "r-sar": "SAR", "r-aed": "AED", "r-cny": "CNY",
-    "r-inr": "INR", "r-cad": "CAD", "r-aud": "AUD",
-    "r-jpy": "JPY", "r-chf": "CHF", "r-kwd": "KWD"
+    "r-usd":"USD","r-eur":"EUR","r-gbp":"GBP","r-sar":"SAR",
+    "r-aed":"AED","r-cny":"CNY","r-inr":"INR","r-cad":"CAD",
+    "r-aud":"AUD","r-jpy":"JPY","r-chf":"CHF","r-kwd":"KWD"
   };
-
   const tickerMap = {
-    "t-usd": "USD", "t-eur": "EUR", "t-gbp": "GBP",
-    "t-aed": "AED", "t-sar": "SAR", "t-cny": "CNY",
-    "t-inr": "INR", "t-cad": "CAD"
+    "t-usd":"USD","t-eur":"EUR","t-gbp":"GBP","t-aed":"AED",
+    "t-sar":"SAR","t-cny":"CNY","t-inr":"INR","t-cad":"CAD"
   };
 
   try {
     const res  = await fetch("https://open.er-api.com/v6/latest/PKR");
     const data = await res.json();
 
-    // Rate cards
     for (const [id, code] of Object.entries(cardMap)) {
-      const el  = document.getElementById(id);
+      const el = document.getElementById(id);
       if (!el) continue;
       const val = data?.rates?.[code]
         ? (1 / data.rates[code]).toFixed(2)
@@ -144,7 +211,6 @@ async function loadRates() {
       el.textContent = val + " PKR";
     }
 
-    // Ticker
     for (const [id, code] of Object.entries(tickerMap)) {
       const val = data?.rates?.[code]
         ? (1 / data.rates[code]).toFixed(2)
@@ -156,7 +222,6 @@ async function loadRates() {
     }
 
   } catch (e) {
-    // Fallback
     for (const [id, code] of Object.entries(cardMap)) {
       const el = document.getElementById(id);
       if (el) el.textContent = getFallbackPKR(code) + " PKR";
@@ -176,22 +241,28 @@ function getFallbackPKR(code) {
 }
 
 /* ======================================================
-   CONVERT
+   CONVERT — FIXED (mobile touch bhi kaam karta hai)
 ====================================================== */
 async function convert() {
-  const amount = Number(document.getElementById("amount").value);
-  const from   = document.getElementById("from").value;
-  const to     = document.getElementById("to").value;
-  const result = document.getElementById("result");
-  const loader = document.getElementById("loading");
+  const amountEl = document.getElementById("amount");
+  const fromEl   = document.getElementById("from");
+  const toEl     = document.getElementById("to");
+  const result   = document.getElementById("result");
+  const loader   = document.getElementById("loading");
+
+  if (!amountEl || !fromEl || !toEl || !result) return;
+
+  const amount = Number(amountEl.value);
+  const from   = fromEl.value;
+  const to     = toEl.value;
 
   if (!amount || amount <= 0) {
-    alert("Please enter a valid amount.");
+    result.textContent = "⚠️ Please enter a valid amount.";
     return;
   }
 
-  loader.style.display = "block";
-  result.textContent   = "Calculating…";
+  if (loader) loader.style.display = "block";
+  result.textContent = "Calculating…";
 
   try {
     const res  = await fetch(`https://open.er-api.com/v6/latest/${from}`);
@@ -215,10 +286,10 @@ async function convert() {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     });
-    result.textContent = `${amount.toLocaleString()} ${from} = ${converted} ${to}`;
+    result.textContent = `${amount.toLocaleString()} ${from} ≈ ${converted} ${to} (offline)`;
   }
 
-  loader.style.display = "none";
+  if (loader) loader.style.display = "none";
 }
 
 /* ======================================================
@@ -232,7 +303,7 @@ function swapCurrencies() {
 }
 
 /* ======================================================
-   FILTER CURRENCY DROPDOWN
+   FILTER CURRENCY
 ====================================================== */
 function filterCurrency(query) {
   const q = query.toLowerCase();
@@ -258,15 +329,6 @@ function clearData() {
 }
 
 /* ======================================================
-   DARK / LIGHT MODE TOGGLE
-====================================================== */
-function toggleMode() {
-  document.body.classList.toggle("light");
-  const btn = document.querySelector(".btn-theme");
-  if (btn) btn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
-}
-
-/* ======================================================
    FAQ ACCORDION
 ====================================================== */
 function toggleFaq(el) {
@@ -277,14 +339,13 @@ function toggleFaq(el) {
    SCROLL PROGRESS BAR
 ====================================================== */
 let ticking = false;
-
 window.addEventListener("scroll", () => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       const bar    = document.getElementById("progressBar");
       const winH   = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (document.documentElement.scrollTop / winH) * 100;
-      if (bar) bar.style.width = scrolled + "%";
+      const pct    = winH > 0 ? (document.documentElement.scrollTop / winH) * 100 : 0;
+      if (bar) bar.style.width = pct + "%";
       ticking = false;
     });
     ticking = true;
@@ -292,26 +353,32 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 /* ======================================================
-   PWA INSTALL
+   PWA INSTALL — FIXED
 ====================================================== */
 function initPWA() {
   const btn = document.getElementById("installBtn");
   if (!btn) return;
 
+  // Already installed check
+  if (window.matchMedia("(display-mode: standalone)").matches) {
+    btn.style.display = "none";
+    return;
+  }
+
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    btn.style.display = "block";
+    btn.style.display = "flex";
   });
 
-  btn.addEventListener("click", () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then(() => {
-        deferredPrompt     = null;
-        btn.style.display  = "none";
-      });
+  btn.addEventListener("click", async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === "accepted") {
+      btn.style.display = "none";
     }
+    deferredPrompt = null;
   });
 
   window.addEventListener("appinstalled", () => {

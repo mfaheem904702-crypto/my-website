@@ -1,3 +1,9 @@
+/* Edge fix */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 /* ======================================================
    RESET
 ====================================================== */
@@ -967,4 +973,103 @@ label {
    margin-top:15px;
    color:#64748b;
    font-size:12px;
+}
+
+/* ======================================================
+   HAMBURGER BUTTON
+====================================================== */
+.btn-hamburger {
+  display: none;
+  background: rgba(0, 229, 255, .08);
+  border: 1px solid #243450;
+  color: #00e5ff;
+  padding: 9px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  transition: .2s;
+}
+
+.btn-hamburger:hover {
+  background: rgba(0, 229, 255, .16);
+}
+
+/* ======================================================
+   MOBILE FIXES
+====================================================== */
+@media (max-width: 768px) {
+
+  .btn-hamburger {
+    display: block;
+  }
+
+  /* Nav menu mobile par hidden, open class se show */
+  .nav {
+    display: none !important;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background: rgba(6, 11, 20, 0.98);
+    border-bottom: 1px solid #1e2d45;
+    flex-direction: column;
+    padding: 10px 16px 16px;
+    gap: 4px;
+    z-index: 999;
+    backdrop-filter: blur(20px);
+  }
+
+  .nav.open {
+    display: flex !important;
+  }
+
+  .nav a {
+    padding: 13px 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #1e2d45;
+    color: #e2e8f0;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .nav a:hover {
+    background: rgba(0, 229, 255, .08);
+    color: #00e5ff;
+  }
+
+  /* Converter mobile fix */
+  .converter-card {
+    padding: 18px 14px;
+  }
+
+  .conv-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero text fix */
+  .hero h1 {
+    font-size: 19px;
+  }
+
+  .logo-text {
+    font-size: 19px;
+  }
+
+  /* Install button mobile */
+  #installBtn {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  /* Edge / small screen text fix */
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
 }

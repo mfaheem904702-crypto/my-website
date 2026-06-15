@@ -1,21 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Bitcoin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin to PKR – TheCurrencyPro</title>
+<meta name="description" content="Bitcoin to PKR rate and crypto currency guides for Pakistan users. Educational content on Bitcoin and digital assets.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.thecurrencypro.com/crypto.html">
+<link rel="icon" href="logo-small.webp" type="image/webp">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5192487251401387" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo-small.webp" alt="TheCurrencyPro" width="38" height="38" loading="eager">
+      <span class="logo-text">TheCurrencyPro</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="currency-rates.html">Rates</a>
+      <a href="forex.html">Forex</a>
+      <a href="gold.html">Gold</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-theme" onclick="toggleMode()" title="Toggle Theme">🌙</button>
+    </div>
+  </div>
+</header>
 
-<h1>💻 Bitcoin</h1>
+<section class="hero">
+  <div class="hero-badge">₿ Crypto</div>
+  <h1>Bitcoin &amp; Crypto in Pakistan</h1>
+  <p class="hero-sub">Educational articles about Bitcoin to PKR and cryptocurrency for Pakistani users.</p>
+</section>
 
-<ul>
+<div class="section-wrap">
+  <div class="section-heading">
+    <div class="sh-icon sh-gold">₿</div>
+    <h2 class="heading-gold">Crypto Articles</h2>
+  </div>
+  <div class="info-grid">
 
-<li>
-<a href="blog/bitcoin-to-pkr.html">
-Bitcoin to PKR
-</a>
-</li>
+    <a href="blog/bitcoin-to-pkr.html" class="info-card" style="text-decoration:none; display:block;">
+      <div class="ic-header">
+        <div class="ic-icon sh-gold">₿</div>
+        <div class="ic-title">Bitcoin to PKR</div>
+      </div>
+      <div class="ic-body"><p>Learn about Bitcoin price in Pakistani Rupees and how crypto markets interact with currency exchange.</p></div>
+    </a>
 
-</ul>
+  </div>
+
+  <div class="content-grid" style="margin-top: 28px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+    <div class="content-box gold-accent">
+      <h2>⚠️ Crypto Disclaimer</h2>
+      <p>All crypto content on TheCurrencyPro is for educational and informational purposes only. Cryptocurrency investments carry high risk. Always do your own research before investing.</p>
+    </div>
+    <div class="content-box">
+      <h2>₿ Bitcoin &amp; PKR</h2>
+      <p>Bitcoin is priced globally in USD. When you convert BTC to PKR, the USD/PKR rate plays a major role. A weaker Rupee means higher Bitcoin prices in PKR even if BTC/USD stays flat.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-links-row">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+      <div class="copyright">© 2026 TheCurrencyPro · All Rights Reserved · Built with ❤️ by Muhammad Faheem</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+  const btn = document.querySelector(".btn-theme");
+  if (btn) btn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+}
+</script>
+</body>
+</html>

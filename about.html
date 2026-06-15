@@ -3,215 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>About Us – TheCurrencyPro | Currency Exchange Rates & USD to PKR</title>
-
 <meta name="description" content="Learn about TheCurrencyPro. We provide currency exchange insights, USD to PKR updates, and financial information for users in Pakistan.">
 <meta name="robots" content="index, follow">
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5192487251401387"
-crossorigin="anonymous"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
-  color:#e5e7eb;
-  line-height:1.7;
-}
-
-/* HEADER */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  background:rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-  flex-wrap:wrap;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.logo img{
-  width:40px;
-}
-
-.site-name{
-  font-size:20px;
-  font-weight:700;
-  color:#22d3ee;
-}
-
-.nav a{
-  color:#e5e7eb;
-  margin:0 10px;
-  text-decoration:none;
-}
-
-.nav a:hover{
-  color:#22d3ee;
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:60px 20px;
-}
-
-.hero h1{
-  font-size:42px;
-  color:#22d3ee;
-  margin-bottom:10px;
-}
-
-.hero p{
-  max-width:750px;
-  margin:auto;
-  color:#cbd5e1;
-}
-
-/* CONTENT */
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
-
-.box{
-  background:#111827;
-  border:1px solid #1f2937;
-  border-left:4px solid #22d3ee;
-  border-radius:12px;
-  padding:25px;
-  margin-bottom:20px;
-}
-
-h2{
-  color:#22d3ee;
-}
-
-ul{
-  padding-left:20px;
-}
-
-ul li{
-  margin-bottom:8px;
-  color:#cbd5e1;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  color:#94a3b8;
-  font-size:14px;
-  border-top:1px solid #1f2937;
-  margin-top:40px;
-}
-
-@media(max-width:768px){
-  .hero h1{
-    font-size:28px;
-  }
-}
-</style>
+<link rel="icon" href="logo-small.webp" type="image/webp">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5192487251401387" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- HEADER -->
-<div class="header">
-  <div class="logo">
-    <img src="logo.png" alt="TheCurrencyPro Logo">
-    <div class="site-name">TheCurrencyPro</div>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo-small.webp" alt="TheCurrencyPro" width="38" height="38" loading="eager">
+      <span class="logo-text">TheCurrencyPro</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="currency-rates.html">Rates</a>
+      <a href="forex.html">Forex</a>
+      <a href="gold.html">Gold</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-theme" onclick="toggleMode()" title="Toggle Theme">🌙</button>
+    </div>
   </div>
-
-  <div class="nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </div>
-</div>
+</header>
 
 <!-- HERO -->
-<div class="hero">
-  <h1>About Us</h1>
-  <p>We provide financial insights, currency exchange information, and USD to PKR updates to help users understand global currency movements.</p>
-</div>
+<section class="hero">
+  <div class="hero-badge">📖 About Us</div>
+  <h1>About TheCurrencyPro</h1>
+  <p class="hero-sub">We provide financial insights, currency exchange information, and USD to PKR updates to help users understand global currency movements.</p>
+</section>
 
 <!-- CONTENT -->
-<div class="container">
+<div class="section-wrap">
+  <div class="content-grid" style="grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));">
 
-  <div class="box">
-    <h2>Who We Are</h2>
-    <p>
-      TheCurrencyPro is an informational website focused on currency exchange rates, especially USD to PKR.
-      Our goal is to help users understand currency trends in a simple and clear way.
-    </p>
+    <div class="content-box">
+      <h2>Who We Are</h2>
+      <p>TheCurrencyPro is an informational website focused on currency exchange rates, especially USD to PKR. Our goal is to help users understand currency trends in a simple and clear way.</p>
+    </div>
+
+    <div class="content-box green-accent">
+      <h2>Our Mission</h2>
+      <p>Our mission is to make financial information accessible, easy to understand, and useful for everyone including freelancers, students, travelers, and businesses.</p>
+    </div>
+
+    <div class="content-box purple-accent">
+      <h2>What We Provide</h2>
+      <ul>
+        <li>✔ USD to PKR exchange rate information</li>
+        <li>✔ Currency market insights and analysis</li>
+        <li>✔ Educational financial content</li>
+        <li>✔ Simple explanations of global economic trends</li>
+      </ul>
+    </div>
+
+    <div class="content-box gold-accent">
+      <h2>Why Trust Us</h2>
+      <ul>
+        <li>✔ Clear and original content</li>
+        <li>✔ Regular updates and improvements</li>
+        <li>✔ Focus on educational financial information</li>
+        <li>✔ Simple and user-friendly explanations</li>
+      </ul>
+    </div>
+
+    <div class="content-box">
+      <h2>Important Notice</h2>
+      <p>All content on this website is for informational and educational purposes only. We do not provide financial, investment, or trading advice.</p>
+    </div>
+
+    <div class="content-box green-accent">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or suggestions, feel free to contact us:</p>
+      <p><strong>Email:</strong> contact@thecurrencypro.com</p>
+    </div>
+
+    <div class="content-box purple-accent" style="grid-column: 1 / -1;">
+      <h2>Founder</h2>
+      <p>TheCurrencyPro was founded by <strong>Muhammad Faheem</strong> with the goal of providing accurate currency exchange rates, forex insights, and financial information for users worldwide.</p>
+    </div>
+
   </div>
-
-  <div class="box">
-    <h2>Our Mission</h2>
-    <p>
-      Our mission is to make financial information accessible, easy to understand, and useful for everyone including freelancers, students, travelers, and businesses.
-    </p>
-  </div>
-
-  <div class="box">
-    <h2>What We Provide</h2>
-    <ul>
-      <li>✔ USD to PKR exchange rate information</li>
-      <li>✔ Currency market insights and analysis</li>
-      <li>✔ Educational financial content</li>
-      <li>✔ Simple explanations of global economic trends</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Why Trust Us</h2>
-    <ul>
-      <li>✔ Clear and original content</li>
-      <li>✔ Regular updates and improvements</li>
-      <li>✔ Focus on educational financial information</li>
-      <li>✔ Simple and user-friendly explanations</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Important Notice</h2>
-    <p>
-      All content on this website is for informational and educational purposes only.
-      We do not provide financial, investment, or trading advice.
-    </p>
-  </div>
-
-  <div class="box">
-    <h2>Contact Us</h2>
-    <p>If you have any questions or suggestions, feel free to contact us:</p>
-    <p><b>Email:</b> contact@thecurrencypro.com</p>
-  </div>
-
-    <h2>Founder</h2>
-
-<p>
-TheCurrencyPro was founded by <strong>Muhammad Faheem</strong> with the goal of providing accurate currency exchange rates, forex insights, and financial information for users worldwide.
-</p>
-
 </div>
 
 <!-- FOOTER -->
-<footer>
-© 2026 TheCurrencyPro | All Rights Reserved
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-links-row">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+      <div class="copyright">© 2026 TheCurrencyPro · All Rights Reserved · Built with ❤️ by Muhammad Faheem</div>
+    </div>
+  </div>
 </footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+  const btn = document.querySelector(".btn-theme");
+  if (btn) btn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+}
+</script>
 
 </body>
 </html>

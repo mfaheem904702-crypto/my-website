@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent – TheCurrencyPro</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="logo-small.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo-small.webp" alt="TheCurrencyPro" width="38" height="38" loading="eager">
+      <span class="logo-text">TheCurrencyPro</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="currency-rates.html">Rates</a>
+      <a href="forex.html">Forex</a>
+      <a href="gold.html">Gold</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-theme" onclick="toggleMode()" title="Toggle Theme">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding: 80px 24px;">
+  <div class="hero-badge">✅ Success</div>
+  <h1>Thank You!</h1>
+  <p class="hero-sub">Your message has been received. We will respond within 24–48 hours.</p>
+  <div style="margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+    <a href="/" class="btn-convert" style="padding: 13px 28px; border-radius: 12px; font-weight: 800; background: linear-gradient(135deg,#00e5ff,#7c3aed); color:#000; text-decoration:none;">Go to Homepage</a>
+    <a href="contact.html" class="btn-clear" style="padding: 13px 18px; border-radius: 12px; font-size:13px; font-weight:600; background:#1a2235; border:1px solid #243450; color:#94a3b8; text-decoration:none;">Send Another Message</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-links-row">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <div class="copyright">© 2026 TheCurrencyPro · All Rights Reserved · Built with ❤️ by Muhammad Faheem</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+  const btn = document.querySelector(".btn-theme");
+  if (btn) btn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+}
+</script>
+
+</body>
+</html>
